@@ -1,5 +1,6 @@
 
 import { Link, NavLink } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
     const handleAddCoffee =(e)=>{
@@ -15,6 +16,26 @@ const AddCoffee = () => {
         const photo = form.photo.value
         const newCoffee = {name, chefName,quantity,supplier,taste,category,details,photo}
         console.log(newCoffee);
+        //send data to the server
+        fetch(`http://localhost:5000/coffee`,{
+            method: 'POST',
+            headers:{
+                'content-type' : 'application/json',
+            },
+            body: JSON.stringify(newCoffee)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Coffee added in the Database successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
     }
     return (
         <div className='bg-slate-600 min-h-screen '>
