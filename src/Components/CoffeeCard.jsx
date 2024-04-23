@@ -23,7 +23,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
            
             // console.log('Delete Confirmed');
             // সে যদি confirm করে যে delete করবো, তাহলে  এটার ভিতরে আসতেছে তাই এখানে fetch করবো। route নিয়া আসলাম ,কারণ id টা পাঠাতে হবে
-            fetch(`http://localhost:5000/coffee/${_id}`,{
+            fetch(`https://coffee-store-server-blue-six.vercel.app/coffee/${_id}`,{
                 method: 'DELETE'
             })
             .then(res => res.json())

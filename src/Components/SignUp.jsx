@@ -19,7 +19,7 @@ const SignUp = () => {
             const createdAt = result.user.metadata.creationTime;
             // new user has been created-firebase এ তো আছেই যদি local database এ রাখতে চাই
             const user = {email , CreatedAt: createdAt}
-            fetch('http://localhost:5000/user',{
+            fetch('https://coffee-store-server-blue-six.vercel.app/user',{
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json',

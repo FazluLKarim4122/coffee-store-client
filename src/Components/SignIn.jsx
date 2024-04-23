@@ -24,7 +24,7 @@ const SignIn = () => {
             }
             //update lastSignInAt in the database first create api in the server
             //2nd fetch route যেহেতু dynamic করি নাই তাই user route এ use করবো 
-            fetch('http://localhost:5000/user',{
+            fetch('https://coffee-store-server-blue-six.vercel.app/user',{
                 method: 'PATCH',
                 headers:{
                     'content-type': 'application/json'
