@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Link, useLoaderData } from 'react-router-dom'
+import { Link, NavLink, useLoaderData } from 'react-router-dom'
 import CoffeeCard from './Components/CoffeeCard'
 
 function App() {
@@ -12,8 +12,13 @@ function App() {
 
   return (
     <>
-      <Link to='/addCoffee'> Add coffee</Link>
-      <Link to='/updateCoffee'> Update coffee</Link>
+      <div className='space-x-2'>
+      <NavLink to='/addCoffee'> Add coffee</NavLink>
+      <NavLink to='/updateCoffee'> Update coffee</NavLink>
+      <NavLink to='/signup'>SignUp</NavLink>
+      <NavLink to='/signin'>SignIn</NavLink>
+      <NavLink to='/users'>Users</NavLink>
+      </div>
       <h1 className='text-2xl font-extrabold'>Total Coffees {coffees.length}</h1>
       <div className='grid md:grid-cols-2 gap-4'>
       {
